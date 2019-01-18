@@ -8,6 +8,7 @@
 <?php	
 	if($this->ion_auth->in_group(array('admin'))){	
 ?>
+			<li><a class="dropdown-button" href="#!" data-activates="dropdownBlog" >Articles<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a class="dropdown-button" href="#!" data-activates="dropdown1" >PVV<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a class="dropdown-button" href="#!" data-activates="dropdownProduits" >Produits<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a class="dropdown-button" href="#!" data-activates="dropdown_suivicommandes" >Journal des commandes<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -155,6 +156,11 @@
 	<li><a href="<?= site_url('/backend/alertes/peremption') ?>">P&eacute;remption</a></li>
 	<li><a href="<?= site_url('/backend/alertes/outofstock') ?>">Rupture de stock</a></li>
 	<li><a href="<?= site_url('/backend/alertes/commandesnontraitees') ?>">Commandes non trait&eacute;es</a></li>
+</ul>
+
+<ul id="dropdownBlog" class="dropdown-content" style="margin-top:64px;">
+	<li><a href="<?= site_url('/blog/articles/liste_des_articles') ?>">Les articles</a></li>
+	<li><a href="<?= site_url('/blog/articles/liste_des_categories') ?>">Cat&eacute;gories</a></li>
 </ul>
 
 <ul id="dropdown1" class="dropdown-content" style="margin-top:64px;">

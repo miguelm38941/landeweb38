@@ -75,6 +75,7 @@ class Lgedit extends CI_Controller {
 		$table = $tables[$t];
 
 		$datas=$this->input->post();
+		$datas['article']=$this->input->post('article', false);
 
 		if( isset($datas['username']) && ($datas['username']=='') && ($t=='medecin')){
 			$CI =& get_instance();
@@ -367,6 +368,14 @@ class Lgedit extends CI_Controller {
 			}
 		}
 
+		// Vérifier si les constantes existent pour cette consultation
+		if($t=='blog_categories'){
+			$search = array('é','à','è','ê','î','û');
+			$replace = array('e','a','e','e','i','u');
+			$res['slug'] = str_replace($search, $replace, strtolower($res['nom']));
+		}
+
+var_dump($datas['article']); exit;
 		// Faire la nouvelle insertion
 		$return = $this->lg->set_data($t,$id,$res,false);
 

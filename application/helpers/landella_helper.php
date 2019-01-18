@@ -277,6 +277,16 @@ function get_destinataires_commandes($all=false){
 	return $res2;
 }
 
+function get_blog_categories_list(){
+	$CI =& get_instance();
+	$res=array();
+	$datas=$CI->db->get('blog_categories')->result_array();
+	foreach($datas as $d){
+		$res[$d['id']]=$d['nom'];
+	}
+	return $res;
+}
+
 function get_pvv(){
 	$CI =& get_instance();
 	$res=array();

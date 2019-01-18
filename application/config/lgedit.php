@@ -1263,6 +1263,58 @@
 				)
 				
 			)  
+		),
+		'blog_posts' => array(
+			'id' => 'id',
+			'fields' => array(
+				'id' => array(
+					'type' => 'text',
+					'table_hide' => true
+				),
+				'title' => array(
+					'required' => true,
+					'label' => 'Titre',
+					'type' => 'text'
+				),
+				'category' => array(
+					'required' => true,
+					'label' => 'Categories',
+					'type' => 'select_multi',
+					'values' => 'get_blog_categories_list'
+				),
+				'article' => array(
+					'required' => true,
+					'label' => 'Contennu de l\'article',
+					'type' => 'textarea',
+					'class' => 'textarea',
+				)
+			)  
+		),
+		'blog_categories' => array(
+			'id' => 'id',
+			'fields' => array(
+				'id' => array(
+					'type' => 'text',
+					'table_hide' => true
+				),
+				'nom' => array(
+					'required' => true,
+					'label' => 'Nom de la cat&eacute;gorie',
+					'type' => 'text'
+				),
+				'slug' => array(
+					'required' => true,
+					'label' => 'Slug',
+					'type' => 'hidden',
+					'form_hide' => true,
+					'table_hide' => true
+				),
+				'description' => array(
+					'required' => true,
+					'label' => 'Description',
+					'type' => 'textarea',
+				)
+			)  
 		)
 	);
 ?>

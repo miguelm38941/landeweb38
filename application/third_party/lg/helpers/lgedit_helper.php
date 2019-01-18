@@ -132,13 +132,13 @@ function lgedit_generate_table($t,$datas=array(),$options=array(),$group=false){
 		}
 
 		$dblclick = $opt['dbclick'] ? site_url($opt['dbclick']."/".$d[$table['id']]) : "";  
-		
 		$html.='<tr data-id="'.$d[$table['id']].'" class="'.$ccolor.'" data-dblclick="'.$dblclick.'">';
 		foreach($table['fields'] as $kk => $vv){
 			if($kk=='pvv'){ 
 				$vv["values"]="get_pvv_code"; 
 			}
 			$val = isset($d[$kk]) ? $d[$kk] : "";
+//var_dump($d); echo '<br><br>';		
 			$dvals='';
 			if(in_array($vv['type'],array('select','select_multi','checkboxs'))){
 			
@@ -293,7 +293,7 @@ function lgedit_generate_form($t,$values=array(),$update=false){
 	$v = '';
 	$html = "<div id='lgedit_form' class='".$v."'>";
 
-	$html .= "<form action='#' method='POST' data-table=\"$t\">";	
+	$html .= "<form action='http://127.0.0.1/landela/lgedit/add/blog_posts' method='POST' data-table=\"$t\">";	
 	foreach($table['fields'] as $k => $v){
 		if($k == $table['id']) continue;
 		$l = isset($v['label']) ? $v['label'] : $k;

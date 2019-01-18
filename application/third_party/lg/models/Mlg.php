@@ -33,7 +33,9 @@ class Mlg extends CI_Model {
 	function set_table_data($table,$id,$datas,$replace=false){ 
 		$CI =& get_instance();
 		if($this->db->table_exists($table)){
-			return $this->set_table_data_normal($table,$id,$datas,$replace);
+			//if($table!='blog_posts'):
+				return $this->set_table_data_normal($table,$id,$datas,$replace);
+			//endif;
 		}
 
 		$user=0;
@@ -68,7 +70,7 @@ class Mlg extends CI_Model {
 			$this->db->where('table_name',$table);
 			$res = $this->db->get('lg_datas')->row_array();
 		}
-		if($res && !empty($res)){
+		if($res && !empty($res)){ 
 			if(!$replace){
 				$old = json_decode($res['datas'],true);
 				$datas=array_merge($old,$datas);
@@ -81,7 +83,11 @@ class Mlg extends CI_Model {
 			$this->db->insert('lg_datas_log',array('table_name' => $table, 'user' => $uid , 'operation' => 'MOD', 'new_datas' => $datas, 'old_datas' => json_encode($old)));
 			return $inserted;	
 		}else{
-			$this->db->insert('lg_datas',array('table_name'=> $table,'user' => $user,'datas' => json_encode($datas), 'created' => date('Y-m-d H:i:s')));
+			if($table=='blog_posts'):
+				$this->db->insert($table,array('title'=> $table,'user' => $user,'datas' => json_encode($datas), 'created' => date('Y-m-d H:i:s')));
+			else:
+				$this->db->insert($table,array('table_name'=> $table,'user' => $user,'datas' => json_encode($datas), 'created' => date('Y-m-d H:i:s')));
+			endif;
 			$inserted = $this->db->insert_id();
 			$this->db->insert('lg_datas_log',array('table_name' => $table, 'user' => $uid , 'operation' => 'ADD', 'new_datas' => json_encode($datas), 'old_datas' => ''));
 			return $inserted;	
@@ -109,6 +115,7 @@ class Mlg extends CI_Model {
 			}
 			return $this->db->get($table)->result_array();
 		}else{
+
 			if(isset($filters['user'])){
 				$this->db->where('user',$filters['user']);
 			}

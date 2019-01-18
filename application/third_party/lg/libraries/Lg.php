@@ -18,6 +18,20 @@ class Lg {
 		return $CI->mlg->set_table_data($table,$id,$datas,$replace);
 	}
 
+	function fetch_datas($table,$filters=array(),$metadatas=false){
+		/*if($table=='ordonnances'){
+			var_dump($user['username']);
+		}*/
+        $CI =& get_instance();
+		$datas = $CI->mlg->get_table_datas($table,$filters,$metadatas,$exists);
+		if($exists){ 
+			$res = $this->_filter($datas,$filters,$metadatas);
+			return $res;
+		}else{ 
+			return $datas;
+		}
+	}
+
 	function get_datas($table,$filters=array(),$metadatas=false){
 		/*if($table=='ordonnances'){
 			var_dump($user['username']);
