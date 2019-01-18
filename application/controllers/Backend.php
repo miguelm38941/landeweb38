@@ -2349,8 +2349,10 @@ var_dump($device); exit;*/
 
 			$maxfinger = $this->lg->get_max_finger($user_id);
 			$fid 		= $maxfinger['finger_id'];
+			$maxfinger2 = $this->lg->check_finger_existe($regTemp);
+			$find 		= $maxfinger2['finger_id'];
 			
-			if ($fid == 0) {
+			if ( ($fid == 0) && ($find == 0) ) {
 
 				$ins = $this->db->insert('finger_finger',array('user_id' => $user_id, 'finger_id' => $fid+1 , 'finger_data' => $regTemp));
 			

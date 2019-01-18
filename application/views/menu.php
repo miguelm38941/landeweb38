@@ -17,6 +17,7 @@
 			<li><a href="<?= site_url('/backend/diffusions') ?>">Informations</a></li>
 			<li><a href="<?= site_url('/backend/questions') ?>">Questions</a></li>
 			<li><a class="dropdown-button" href="#!" data-activates="dropdown4" >Acteurs<i class="material-icons right">arrow_drop_down</i></a></li>
+			<!--li><a class="dropdown-button" href="#!" data-activates="dropdown5" >Organisations<i class="material-icons right">arrow_drop_down</i></a></li-->
 <?php
 	}else if($this->ion_auth->in_group(array('pnls'))){
 ?>
@@ -138,19 +139,19 @@
 
 
 <ul id="dropdown4" class="dropdown-content" style="margin-top:64px;">
-	<li><a href="<?= site_url('/backend/educateur') ?>">Educateurs</a></li>
 	<li><a href="<?= site_url('/backend/province') ?>">Provinces</a></li>
 	<li><a href="<?= site_url('/backend/ville') ?>">Villes</a></li>
 	<li><a href="<?= site_url('/backend/regionsante') ?>">Centre de Distribution r&eacute;gional</a></li>
 	<li><a href="<?= site_url('/backend/zonesante') ?>">Zone de sant&eacute;</a></li>
 	<li><a href="<?= site_url('/backend/formation_sanitaire') ?>">Formation sanitaire</a></li>
-	<li><a href="<?= site_url('/backend/medecin') ?>">M&eacute;decins</a></li>
-	<li><a href="<?= site_url('/backend/infirmier') ?>">Infirmier</a></li>
 	<li><a href="<?= site_url('/backend/pharmacie') ?>">Pharmacie </a></li>
 	<li><a href="<?= site_url('/backend/partenaire') ?>">Partenaires</a></li>
 	<li><a href="<?= site_url('/backend/societe_pharma') ?>">Soci&eacute;t&eacute; Pharmaceutique</a></li>
 </ul>
-
+<ul id="dropdown5" class="dropdown-content" style="margin-top:64px;">
+	<li><a href="<?= site_url('/backend/typeorganisation') ?>">Type Organisation</a></li>
+	<li><a href="<?= site_url('/backend/organisation') ?>">Organisation</a></li>
+</ul>
 <ul id="dropdownAlertes" class="dropdown-content" style="margin-top:64px;">
 	<li><a href="<?= site_url('/backend/stock') ?>">Stocks</a></li>
 	<li><a href="<?= site_url('/backend/alertes/peremption') ?>">P&eacute;remption</a></li>
@@ -199,6 +200,11 @@
 		if($this->ion_auth->is_admin()){
 	?>
 	 	<li><a href="<?= site_url('/auth/') ?>">Utilisateurs</a></li>
+	 	<li><a href="<?= site_url('/backend/educateur') ?>">Educateurs</a></li>
+	 	<li><a href="<?= site_url('/backend/medecin') ?>">M&eacute;decins</a></li>
+	    <li><a href="<?= site_url('/backend/infirmier') ?>">Infirmier</a></li>
+		<li><a href="<?= site_url('/backend/typeorganisation') ?>">Type Organisation</a></li>
+		<li><a href="<?= site_url('/backend/organisation') ?>">Organisation</a></li>
 	<?php
 		}
 	?>

@@ -25,7 +25,7 @@
 
 
 
-            <h2><?= isset($title) ? $title : "" ?></h2>
+            <h3><?= isset($title) ? $title : "Les types d'organisations" ?></h3>
 
             <div class="row">
 
@@ -49,7 +49,7 @@
 
 
             </div>
-            <a id="lgedit_add" href="<?php echo base_url();?>backend/insertTypeOrganisation" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
+            <a id="lgedit_add" href="<?php echo base_url();?>users/insertTypeOrganisation" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>
     </main>
 
 </div>

@@ -73,3 +73,10 @@ $route['mobileapi/blog/posts/(:num)'] = 'api/mobile/blog/posts/$1';
 $route['mobileapi/blog/categories'] = 'api/mobile/blog/categories';
 $route['mobileapi/blog/categories/(:num)'] = 'api/mobile/blog/categories/$1';
 $route['mobileapi/blog/categories/posts/(:num)'] = 'api/mobile/blog/postspercategories/$1';
+/* End of api routes */
+
+$route['backend/typeorganisation'] = 'users/typeorganisation';
+$route['backend/insertTypeOrganisation'] = 'users/insertTypeOrganisation';
+$route['backend/organisation'] = 'users/organisation';
+
+

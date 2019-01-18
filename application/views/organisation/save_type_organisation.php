@@ -15,7 +15,7 @@ include_once(APPPATH.'/views/menu.php');
 	</div>
 </nav-->
 <div class="container">
-    <h1>Ajouter un nouveau type d'organisation</h1>
+    <h3>Ajouter un nouveau type d'organisation</h3>
     <p>Veuillez renseigner les champs</p>
 
     <!--    <div id="infoMessage">--><?php //echo $message;?><!--</div>-->
@@ -28,7 +28,7 @@ include_once(APPPATH.'/views/menu.php');
 
     <p>
         <?php echo '<label for="description">Description type organisation</label>' ?><br />
-        <input type="text" required name="description">
+        <input type="text" name="description">
     </p>
 
 

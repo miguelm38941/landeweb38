@@ -1264,6 +1264,26 @@
 				
 			)  
 		),
+		'type_organisation' => array(
+			'id' => 'id',
+			'fields' => array(
+				'id' => array(
+					'type' => 'int',
+					'table_hide' => true
+				),
+				'name' => array(
+					'required' => true,
+					'label' => 'Libellé type organisation',
+					'type' => 'text',
+				),
+				'description' => array(
+					'required' => true,
+					'label' => 'Decription type organisation',
+					'type' => 'text'
+				)
+				
+			)  
+		),
 		'blog_posts' => array(
 			'id' => 'id',
 			'fields' => array(

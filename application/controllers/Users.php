@@ -63,7 +63,7 @@ class Users extends MY_Controller {
             'description'=> $this->input->post('description')
         );
         $this->Musers->UpdateData('type_organisation', 'id_type_organisation',$id,$data);
-        redirect('backend/typeorganisation');
+        redirect('users/typeorganisation');
     }
 
     public function UpdateOrganisation(){
@@ -78,7 +78,7 @@ class Users extends MY_Controller {
             'id_type_organisation'=> $this->input->post('type'),
         );
         $this->Musers->UpdateData('organisation','id_organisation',$id,$data);
-        redirect('backend/organisation');
+        redirect('users/organisation');
     }
 
     public function insertTypeOrganisation(){
@@ -88,7 +88,7 @@ class Users extends MY_Controller {
                 'description'=> $this->input->post('description')
             );
             $this->Musers->insertData('type_organisation', $data);
-            redirect('backend/typeorganisation');
+            redirect('users/typeorganisation');
         }else{
             $this->load->view('organisation/save_type_organisation');
         }
@@ -107,7 +107,7 @@ class Users extends MY_Controller {
                 'id_type_organisation'=> $this->input->post('type'),
             );
             $this->Musers->insertData('organisation', $data);
-            redirect('backend/organisation');
+            redirect('users/organisation');
         }else{
             $this->data['types'] = $this->Musers->getData('type_organisation');
             $this->load->view('organisation/save_organisation',$this->data);

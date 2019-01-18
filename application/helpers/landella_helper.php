@@ -277,6 +277,7 @@ function get_destinataires_commandes($all=false){
 	return $res2;
 }
 
+
 function get_blog_categories_list(){
 	$CI =& get_instance();
 	$res=array();

@@ -15,7 +15,7 @@ include_once(APPPATH.'/views/menu.php');
 	</div>
 </nav-->
 <div class="container">
-    <h1>Ajouter une nouvelleorganisation</h1>
+    <h3>Ajouter une nouvelle organisation</h3>
 <!--    <p>Veuillez renseigner les champs</p>-->
 
     <!--    <div id="infoMessage">--><?php //echo $message;?><!--</div>-->

@@ -17,7 +17,7 @@ window.base_url='<?= base_url() ?>';
 </script>
 <link rel="stylesheet" href="<?= base_url('css/styles.css') ?>"/>
 <script type="text/javascript" src="<?= base_url('js/common.js') ?>"></script>
-
+<script type="text/javascript" src="<?= base_url('js/lgedit.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('js/pagination.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('js/fingerprint/custom.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('js/fingerprint/ajaxMask.js') ?>"></script>

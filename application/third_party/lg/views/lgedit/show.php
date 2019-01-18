@@ -21,12 +21,17 @@
 <?php 
 
 	if(isset($can_add) && $can_add){
-		$url = '/lgedit/addPage/'.$table;
-		if(isset($add_params) && is_array($add_params)){
-			foreach($add_params as $k => $v){
-				$url .= "/$k/$v";
+		if($table=='blog_posts'){		
+			$url = '/blog/articles/rediger_un_article';
+		}else{
+			$url = '/lgedit/addPage/'.$table;
+			if(isset($add_params) && is_array($add_params)){
+				foreach($add_params as $k => $v){
+					$url .= "/$k/$v";
+				}
 			}
 		}
+	//}
 
 ?>
 <a id="lgedit_add" href="<?= site_url($url) ?>" class="btn-floating btn-large waves-effect waves-light red right"><i class="material-icons">add</i></a>

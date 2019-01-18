@@ -25,7 +25,7 @@
 
 
 
-            <h2><?= isset($title) ? $title : "Liste des organisations" ?></h2>
+            <h3><?= isset($title) ? $title : "Liste des organisations" ?></h3>
 
             <div class="row">
 
